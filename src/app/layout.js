@@ -1,3 +1,4 @@
+import Header from "@/components/header/Header";
 import "./globals.css";
 
 export const metadata = {

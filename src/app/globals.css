@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body{
+  overscroll-behavior: none;
+}
+
 @theme {
   --color-primary: #000000;
   --color-secondary: #ffffff;
@@ -25,4 +29,10 @@
   src: url("/fonts/StudioPro-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+}
+
+@layer utilities{
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
