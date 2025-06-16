@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-body{
+body {
   overscroll-behavior: none;
 }
 
@@ -8,13 +8,14 @@ body{
   --color-primary: #000000;
   --color-secondary: #ffffff;
   --font-bold: "StudioProBold";
-  --font-primary: "StudioProRegular"
-  --font-size-h1: clamp(50px, 70/2000 * 100vw, 70px);
-  --font-size-h2: clamp(40px, 55/2000 * 100vw, 55px);
-  --font-size-h3: clamp(26px, 40/2000 * 100vw, 40px);
-  --font-size-h4: clamp(20px, 24/1400 * 100vw, 24px);
-  --font-size-h5: clamp(20px, 24/1400 * 100vw, 24px);
-  --font-size-h6: clamp(20px, 24/1400 * 100vw, 24px);
+  --font-primary: "StudioProRegular";
+  --text-size-menu: clamp(48px, 120/2000 * 100vw, 120px);
+  --text-size-h1: clamp(50px, 70/2000 * 100vw, 70px);
+  --text-size-h2: clamp(40px, 55/2000 * 100vw, 55px);
+  --text-size-h3: clamp(26px, 40/2000 * 100vw, 40px);
+  --text-size-h4: clamp(20px, 24/1400 * 100vw, 24px);
+  --text-size-h5: clamp(20px, 24/1400 * 100vw, 24px);
+  --text-size-h6: clamp(20px, 24/1400 * 100vw, 24px);
 }
 
 @font-face {
@@ -31,8 +32,12 @@ body{
   font-style: normal;
 }
 
-@layer utilities{
+@layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+
+  .subtitle-animated {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100;
   }
 }

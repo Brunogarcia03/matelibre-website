@@ -10,14 +10,16 @@ import hero3 from "@/assets/hero/hero-3.jpg";
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaBars, FaUser } from "react-icons/fa";
+import { FaAngleDown, FaBars, FaUser } from "react-icons/fa";
 import { useState } from "react";
 import Menu from "./header/Menu";
+import SubMenu from "./header/subMenu";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [open, setOpen] = useState(false);
+  const [subMenu, setSubMenu] = useState(false);
 
   useGSAP(() => {
     let tl = gsap.timeline({
@@ -105,31 +107,36 @@ const Hero = () => {
               >
                 <FaBars className="w-[20px] h-[20px]" />
               </button>
-              <button className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100">
+              <button className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 text-xl">
                 build your box
               </button>
             </div>
 
-            <nav className="flex items-center gap-3">
+            <nav className="flex items-center gap-3 text-xl">
               <Link
                 href={"#"}
                 className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100"
               >
                 products
               </Link>
-              <Link
-                href={"#"}
-                className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100"
+              <button
+                onClick={() => setSubMenu((prev) => !prev)}
+                className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 flex items-center"
               >
-                explore
-              </Link>
+                explore{" "}
+                <FaAngleDown
+                  className={`transition-transform duration-300 ${
+                    subMenu ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              </button>
               <Link
                 href={"#"}
                 className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100"
               >
                 community
               </Link>
-              <button className="flex items-center justify-center w-[2.5rem] h-[2.5rem] rounded-full bg-white/30 hover:bg-white/70 transition-colors duration-300 p-2">
+              <button className="flex items-center justify-center w-[2.5rem] h-[2.5rem] ml-[2vh] rounded-full bg-white/30 hover:bg-white/70 transition-colors duration-300 p-2">
                 <FaUser className="size-[20px]" />
               </button>
             </nav>
@@ -137,6 +144,7 @@ const Hero = () => {
         </header>
       </div>
       {open && <Menu open={open} setOpen={setOpen} />}
+      {subMenu && <SubMenu setSubMenu={setSubMenu} />}
     </main>
   );
 };
