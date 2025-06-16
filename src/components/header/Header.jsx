@@ -9,8 +9,9 @@ import { useGSAP } from "@gsap/react";
 
 import Link from "next/link";
 import { useState } from "react";
-import Menu from "./Menu";
-import SubMenu from "./subMenu";
+
+import Menu from "@/components/header/Menu";
+import SubMenu from "@/components/header/SubMenu";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -31,6 +32,7 @@ const Header = () => {
         ease: "power2.out",
         delay: 0.2,
       });
+      setSubMenu(false);
     } else if (scrollY > headerHeightValue && scrollY >= prevScroll) {
       gsap.to("#header-fixed", {
         y: "-100%",
@@ -40,6 +42,7 @@ const Header = () => {
         ease: "power2.out",
         delay: 0.2,
       });
+      setSubMenu(false);
     } else if (scrollY > headerHeightValue && scrollY < prevScroll) {
       gsap.to("#header-fixed", {
         y: 0,
@@ -93,6 +96,7 @@ const Header = () => {
                 subMenu ? "rotate-180" : "rotate-0"
               }`}
             />
+            {scrollY > 50 && <SubMenu subMenu={subMenu} />}
           </button>
           <Link href={"#"} className="subtitle-animated">
             community
@@ -103,7 +107,6 @@ const Header = () => {
         </nav>
       </div>
       {open && <Menu open={open} setOpen={setOpen} />}
-      {subMenu && <SubMenu setSubMenu={setSubMenu} />}
     </header>
   );
 };

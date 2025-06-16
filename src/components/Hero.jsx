@@ -7,13 +7,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import hero1 from "@/assets/hero/hero-1.jpg";
 import hero2 from "@/assets/hero/hero-2.jpg";
 import hero3 from "@/assets/hero/hero-3.jpg";
+import hero6 from "@/assets/hero/hero-6.jpg";
+import hero7 from "@/assets/hero/hero-7.jpg";
 
 import Image from "next/image";
 import Link from "next/link";
+
 import { FaAngleDown, FaBars, FaUser } from "react-icons/fa";
 import { useState } from "react";
-import Menu from "./header/Menu";
-import SubMenu from "./header/subMenu";
+
+import Menu from "@/components/header/Menu";
+import SubMenu from "@/components/header/SubMenu";
+import Button from "@/components/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +47,26 @@ const Hero = () => {
         { opacity: 0, scale: 1.2 },
         { opacity: 1, scale: 1 },
         ">4"
+      )
+      .fromTo(
+        "#hero-6",
+        { opacity: 0, scale: 1.2 },
+        { opacity: 1, scale: 1 },
+        ">4"
+      )
+      .fromTo(
+        "#hero-7",
+        { opacity: 0, scale: 1.2 },
+        { opacity: 1, scale: 1 },
+        ">4"
       );
+
+    gsap.from("#header-hero", {
+      y: "-100%",
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.3,
+    });
 
     gsap.to(".main-container", {
       borderBottomLeftRadius: "10%",
@@ -89,9 +113,36 @@ const Hero = () => {
           width={771}
           height={1028}
         />
+        <Image
+          className="absolute inset-0 h-full w-full object-cover object-[53.5664%_33.2734%]"
+          id="hero-6"
+          src={hero6}
+          alt="Imagen hero 6"
+          width={771}
+          height={1028}
+        />
+        <Image
+          className="absolute inset-0 h-full w-full object-cover object-[53.5664%_33.2734%]"
+          id="hero-7"
+          src={hero7}
+          alt="Imagen hero 7"
+          width={771}
+          height={1028}
+        />
+
+        <div className="absolute left-[8vh] bottom-[5vh] z-20">
+          <h1 className="text-size-menu font-bold mb-[3vh] text-white leading-[1]">
+            The ideal <br />
+            dose <br />
+            of energy
+          </h1>
+          <div className="font-bold">
+            <Button className={"bg-white text-black"}>Build your box</Button>
+          </div>
+        </div>
       </div>
       <div className="h-full w-full inset-0 z-30">
-        <header className="absolute top-0 left-0 w-full z-30">
+        <header id="header-hero" className="absolute top-0 left-0 w-full z-30">
           <div className="flex items-center justify-between mx-[5vh] my-[1vh] text-white font-bold">
             <div className="flex items-center gap-3">
               <Link
@@ -129,6 +180,7 @@ const Hero = () => {
                     subMenu ? "rotate-180" : "rotate-0"
                   }`}
                 />
+                <SubMenu subMenu={subMenu} />
               </button>
               <Link
                 href={"#"}
@@ -144,7 +196,6 @@ const Hero = () => {
         </header>
       </div>
       {open && <Menu open={open} setOpen={setOpen} />}
-      {subMenu && <SubMenu setSubMenu={setSubMenu} />}
     </main>
   );
 };

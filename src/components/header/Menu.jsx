@@ -111,7 +111,7 @@ const Menu = ({ open, setOpen }) => {
         </div>
 
         <div
-          className={`absolute bottom-0 flex gap-5 px-[8vh] py-[5vh] font-bold transition-transform duration-500 ease-out ${
+          className={`absolute bottom-0 flex gap-5 px-[8vh] py-[5vh] font-bold transition-transform duration-500 ease-out text-nowrap ${
             subMenu ? "translate-y-0" : "translate-y-[100%]"
           }`}
         >

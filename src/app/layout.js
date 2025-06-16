@@ -1,5 +1,7 @@
-import Header from "@/components/header/Header";
 import "./globals.css";
+
+import Header from "@/components/header/Header";
+import LenisScrollProvider from "@/utils/lenis-provider";
 
 export const metadata = {
   title: "Mate Libre",
@@ -11,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body className={`antialiased font-primary`}>
         <Header />
-        {children}
+        <LenisScrollProvider>{children}</LenisScrollProvider>
       </body>
     </html>
   );
