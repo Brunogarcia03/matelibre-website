@@ -45,4 +45,13 @@ body {
   .subtitle-animated {
     @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100;
   }
+
+  .button-circle {
+    clip-path: inset(0 0 0 calc(100% - 2.5rem) round 2.5rem);
+    transition: clip-path 0.4s cubic-bezier(0.38, 0.005, 0.215, 1);
+  }
+
+  .group:hover .button-circle {
+    clip-path: inset(0 0 0 0 round 2.5rem);
+  }
 }

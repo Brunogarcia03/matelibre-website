@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { FaArrowRight, FaPlus } from "react-icons/fa6";
 
@@ -18,7 +16,7 @@ const ProductItem = ({
 }) => {
   return (
     <article
-      className="group relative rounded-[50px] aspect-[450/400] transition-all duration-500"
+      className="group relative rounded-[50px] aspect-[680/480] transition-all duration-500"
       style={{
         backgroundColor: color.secondary,
         padding: "3rem",
@@ -35,23 +33,23 @@ const ProductItem = ({
             alt={lime & fruit}
             width={500}
             height={625}
-            className="absolute left-0 bottom-0 w-[210px] h-[262px] z-0 transition-all duration-300 opacity-0 translate-y-[15%] -translate-x-[10%] group-hover:translate-0 group-hover:opacity-100"
+            className="absolute -left-5 -bottom-5 w-[250px] h-[302px] z-0 transition-all duration-500 opacity-0 group-hover:left-0 group-hover:bottom-0 group-hover:opacity-100"
           />
           <Image
             src={lime}
             alt="Product Name"
             width={200}
             height={507}
-            className="w-[92px] h-[233px] transition-all duration-500 translate-y-[50%] group-hover:translate-y-[40%]"
+            className="absolute left-10 -bottom-1/3 -translate-y-1/3 group-hover:-bottom-8 group-hover:translate-y-0 w-[92px] h-[233px] transition-all duration-500"
           />
         </div>
 
-        <button className="relative flex h-12 w-12 group-hover:w-full gap-2 items-center justify-center py-2 px-3 overflow-hidden rounded-full text-white bg-[#257535] hover:bg-[#1f5f2b] text-lg transition-all duration-300">
-          <span className="hidden group-hover:inline-flex text-nowrap transition-all duration-300">
-            Hover me
-          </span>
-          <FaArrowRight className="flex h-5 w-5" />
-        </button>
+        <div className="absolute bottom-5 right-5">
+          <button className="relative flex items-center justify-center gap-2 py-2 px-2 overflow-hidden text-white bg-[#257535] hover:bg-[#1f5f2b] text-base transition-all duration-300 button-circle group-hover:button-circle-expand">
+            <span className="text-nowrap font-bold">view product</span>
+            <FaArrowRight className="size-[1.5rem]" />
+          </button>
+        </div>
       </div>
     </article>
   );
