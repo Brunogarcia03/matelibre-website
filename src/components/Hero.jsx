@@ -89,7 +89,7 @@ const Hero = () => {
       <div className="relative h-dvh w-full">
         <div className="absolute inset-0 w-full h-full bg-black/20 z-[10]" />
         <Image
-          className="absolute inset-0 h-full w-full object-cover object-[43.8672%_51.6963%]"
+          className="absolute inset-0 h-full w-full object-cover object-[43.8672%_51.6963%] select-none"
           id="hero-1"
           priority
           src={hero1}
@@ -98,7 +98,7 @@ const Hero = () => {
           height={1028}
         />
         <Image
-          className="absolute inset-0 h-full w-full object-cover object-[57.7899%_48.2393%]"
+          className="absolute inset-0 h-full w-full object-cover object-[57.7899%_48.2393%] select-none"
           id="hero-2"
           src={hero2}
           alt="Imagen hero 2"
@@ -106,7 +106,7 @@ const Hero = () => {
           height={1028}
         />
         <Image
-          className="absolute inset-0 h-full w-full object-cover object-[53.5664%_33.2734%]"
+          className="absolute inset-0 h-full w-full object-cover object-[53.5664%_33.2734%] select-none"
           id="hero-3"
           src={hero3}
           alt="Imagen hero 3"
@@ -114,7 +114,7 @@ const Hero = () => {
           height={1028}
         />
         <Image
-          className="absolute inset-0 h-full w-full object-cover object-[53.5664%_33.2734%]"
+          className="absolute inset-0 h-full w-full object-cover object-[53.5664%_33.2734%] select-none"
           id="hero-6"
           src={hero6}
           alt="Imagen hero 6"
@@ -122,7 +122,7 @@ const Hero = () => {
           height={1028}
         />
         <Image
-          className="absolute inset-0 h-full w-full object-cover object-[53.5664%_33.2734%]"
+          className="absolute inset-0 h-full w-full object-cover object-[53.5664%_33.2734%] select-none"
           id="hero-7"
           src={hero7}
           alt="Imagen hero 7"

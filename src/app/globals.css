@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html::selection {
+  background-color: black;
+  color: white;
+}
+
 body {
   overscroll-behavior: none;
 }
