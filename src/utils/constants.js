@@ -26,6 +26,11 @@ export const productList = [
     drink: lime,
     fruit: lime_fruit,
     title: "Lime",
+    description:
+      "It's like happy hour in a can. Refreshing and fresh, perfect for a late day on the patio or a hot day by the pool.",
+    colorPrimary: "#235c1b",
+    colorSecondary: "#e1efe3",
+    colorAccent: "#257535",
     url: "/products/lime",
   },
   {
@@ -38,6 +43,11 @@ export const productList = [
     drink: passion,
     fruit: passion_fruit,
     title: "Passion Fruit",
+    description:
+      "Exotic, rich, and dangerously fruity. A taste worthy of the local fruit markets of South America.",
+    colorPrimary: "#ff9500",
+    colorSecondary: "#fffbdc",
+    colorAccent: "#ffb600",
     url: "/products/passion-fruit",
   },
   {

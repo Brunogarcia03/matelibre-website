@@ -54,4 +54,28 @@ body {
   .group:hover .button-circle {
     clip-path: inset(0 0 0 0 round 2.5rem);
   }
+
+  .rail_item {
+    font-family: "StudioProBold", StudioProBold, -apple-system,
+      BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
+      helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    padding-right: 3.75rem;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    text-transform: lowercase;
+    line-height: 1.2;
+    color: #949494;
+  }
+
+  .rail_text {
+    font-family: "StudioProBold", StudioProBold, -apple-system,
+      BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
+      helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    letter-spacing: -0.02em;
+    padding-right: 3.75rem;
+    font-weight: 400;
+    text-transform: lowercase;
+    line-height: 1.2;
+    color: #000;
+  }
 }

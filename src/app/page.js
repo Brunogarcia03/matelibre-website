@@ -1,17 +1,12 @@
 import Hero from "@/components/Hero";
-import ProductItem from "@/components/ProductItem";
+import Slider from "@/components/Slider";
 
 const page = () => {
   return (
     <>
       <Hero />
-      <div className="w-full my-[1.25rem] mb-[5rem] px-[1.25rem]">
-        <div className="grid grid-cols-3 gap-[1.25rem]">
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-        </div>
-      </div>
+      <Slider />
+      <div className="h-[200vh] w-full"></div>
     </>
   );
 };

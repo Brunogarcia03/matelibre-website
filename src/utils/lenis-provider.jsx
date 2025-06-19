@@ -9,7 +9,7 @@ const LenisScrollProvider = ({ children }) => {
     <ReactLenis
       ref={lenisRef}
       root
-      options={{ lerp: 0.1, duration: 1.2, smoothWheel: true }}
+      options={{ lerp: 0.5, duration: 5, smoothWheel: true }}
     >
       {children}
     </ReactLenis>

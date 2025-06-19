@@ -13,10 +13,11 @@ const ProductItem = ({
     primary: "#235c1b",
     secondary: "#e1efe3",
   },
+  className = "",
 }) => {
   return (
     <article
-      className="group relative rounded-[50px] aspect-[680/480] transition-all duration-500"
+      className={`group relative rounded-[50px] transition-all duration-500 ${className}`}
       style={{
         backgroundColor: color.secondary,
         padding: "3rem",
@@ -36,11 +37,11 @@ const ProductItem = ({
             className="absolute -left-5 -bottom-5 w-[250px] h-[302px] z-0 transition-all duration-500 opacity-0 group-hover:left-0 group-hover:bottom-0 group-hover:opacity-100"
           />
           <Image
-            src={lime}
+            src={can}
             alt="Product Name"
             width={200}
             height={507}
-            className="absolute left-10 -bottom-1/3 -translate-y-1/3 group-hover:-bottom-8 group-hover:translate-y-0 w-[92px] h-[233px] transition-all duration-500"
+            className="absolute left-10 -bottom-1/4 group-hover:-bottom-8 w-[92px] h-[233px] transition-all duration-500"
           />
         </div>
 
